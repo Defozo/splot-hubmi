@@ -54,7 +54,14 @@ test('wyniki i porównanie pokazują czytelne tytuły prób z dostępnym orygina
   const cards = page.locator('.result-card');
   await cards.first().getByText('Pełna nazwa próby', { exact: true }).click();
   await expect(cards.first().getByText(originals[0], { exact: true })).toBeVisible();
-  for (const checkbox of await cards.getByRole('checkbox', { name: 'Porównaj', exact: true }).all()) await checkbox.check();
+  for (const card of await cards.all()) {
+    const title = await card.locator('h3').innerText();
+    const checkbox = card.getByRole('checkbox', { name: `Porównaj: ${title}`, exact: true });
+    await expect(checkbox).toHaveAccessibleName(`Porównaj: ${title}`);
+    await checkbox.focus();
+    await page.keyboard.press('Space');
+    await expect(checkbox).toBeChecked();
+  }
   await page.getByRole('button', { name: 'Porównaj (2)' }).click();
   const dialog = page.getByRole('dialog');
   await expect(dialog.locator('tbody th').first()).toContainText('próba 03.10.2026');
