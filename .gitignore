@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.local/
+test-results/
+playwright-report/
+artifacts/backup/
+*.log
+USER_REQUEST_*
+HACKTRIBE_UPDATE_RESULT.json
+__pycache__/
+
+# Local publication and media work
+artifacts/github-publication-*/
+output/
+_video_work/
+*.sqlite*
+*.db
+*.har
+
+# Local reports remain outside public source distribution.
+artifacts/*
+!artifacts/deployment.json

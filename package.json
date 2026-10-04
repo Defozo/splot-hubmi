@@ -1,0 +1,61 @@
+{
+  "name": "splot-hubmi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5186",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4186",
+    "check": "tsc --noEmit",
+    "test:domain": "vitest run",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test --grep accessibility",
+    "eval:matching": "tsx scripts/eval-matching.ts",
+    "backend:deploy": "node scripts/convex-cli.mjs deploy --yes",
+    "backend:seed": "node scripts/convex-cli.mjs run seed:seed",
+    "setup": "node scripts/provision.mjs"
+  },
+  "dependencies": {
+    "@auth/core": "^0.41.3",
+    "@cfworker/json-schema": "4.1.1",
+    "@convex-dev/auth": "^0.0.96",
+    "@hookform/resolvers": "^5.9.1",
+    "@oslojs/crypto": "1.0.1",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-tabs": "^1.1.21",
+    "@radix-ui/react-tooltip": "^1.2.16",
+    "@rjsf/core": "^6.11.0",
+    "@rjsf/utils": "^6.11.0",
+    "@rjsf/validator-ajv8": "^6.11.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^2.1.1",
+    "convex": "^1.46.0",
+    "jose": "^6.2.12",
+    "lucide-react": "^1.51.0",
+    "papaparse": "^5.7.0",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-hook-form": "^7.89.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@edge-runtime/vm": "^5.0.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "convex-test": "^0.0.60",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}

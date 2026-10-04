@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const browser=await chromium.launch({headless:true});
+const page=await browser.newPage(); const errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+await page.goto('http://127.0.0.1:5186/#/search',{waitUntil:'domcontentloaded'});
+await page.getByLabel('Opisz swoją potrzebę').fill('Starsi mieszkańcy są samotni. Chcemy cotygodniowych spotkań sąsiedzkich i regularnego kontaktu z ludźmi.');
+await page.getByRole('button',{name:'Znajdź pasujące rozwiązania'}).click();
+await page.waitForTimeout(7000);
+console.log(JSON.stringify({errors,main:await page.locator('main').innerText()}));
+await page.screenshot({path:'artifacts/search-debug.png',fullPage:true});
+await browser.close();

@@ -1,0 +1,2274 @@
+{
+  "generatedAt": "2026-10-03T14:54:49.135Z",
+  "lockfileVersion": 3,
+  "packages": [
+    {
+      "name": "@auth/core",
+      "version": "0.41.3",
+      "license": "ISC",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/nextauthjs/next-auth.git",
+      "packagePath": "node_modules/@auth/core"
+    },
+    {
+      "name": "@axe-core/playwright",
+      "version": "4.13.0",
+      "license": "MPL-2.0",
+      "direct": true,
+      "development": true,
+      "repository": "https://github.com/dequelabs/axe-core-npm.git",
+      "packagePath": "node_modules/@axe-core/playwright"
+    },
+    {
+      "name": "@cfworker/json-schema",
+      "version": "4.1.1",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/cfworker/cfworker",
+      "packagePath": "node_modules/@cfworker/json-schema"
+    },
+    {
+      "name": "@convex-dev/auth",
+      "version": "0.0.96",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/get-convex/convex-auth",
+      "packagePath": "node_modules/@convex-dev/auth"
+    },
+    {
+      "name": "@edge-runtime/primitives",
+      "version": "6.0.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/vercel/edge-runtime.git",
+      "packagePath": "node_modules/@edge-runtime/primitives"
+    },
+    {
+      "name": "@edge-runtime/vm",
+      "version": "5.0.0",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "git+https://github.com/vercel/edge-runtime.git",
+      "packagePath": "node_modules/@edge-runtime/vm"
+    },
+    {
+      "name": "@esbuild/aix-ppc64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/aix-ppc64"
+    },
+    {
+      "name": "@esbuild/aix-ppc64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/aix-ppc64"
+    },
+    {
+      "name": "@esbuild/android-arm",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/android-arm"
+    },
+    {
+      "name": "@esbuild/android-arm",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/android-arm"
+    },
+    {
+      "name": "@esbuild/android-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/android-arm64"
+    },
+    {
+      "name": "@esbuild/android-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/android-arm64"
+    },
+    {
+      "name": "@esbuild/android-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/android-x64"
+    },
+    {
+      "name": "@esbuild/android-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/android-x64"
+    },
+    {
+      "name": "@esbuild/darwin-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/darwin-arm64"
+    },
+    {
+      "name": "@esbuild/darwin-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/darwin-arm64"
+    },
+    {
+      "name": "@esbuild/darwin-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/darwin-x64"
+    },
+    {
+      "name": "@esbuild/darwin-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/darwin-x64"
+    },
+    {
+      "name": "@esbuild/freebsd-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/freebsd-arm64"
+    },
+    {
+      "name": "@esbuild/freebsd-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/freebsd-arm64"
+    },
+    {
+      "name": "@esbuild/freebsd-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/freebsd-x64"
+    },
+    {
+      "name": "@esbuild/freebsd-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/freebsd-x64"
+    },
+    {
+      "name": "@esbuild/linux-arm",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-arm"
+    },
+    {
+      "name": "@esbuild/linux-arm",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-arm"
+    },
+    {
+      "name": "@esbuild/linux-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-arm64"
+    },
+    {
+      "name": "@esbuild/linux-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-arm64"
+    },
+    {
+      "name": "@esbuild/linux-ia32",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-ia32"
+    },
+    {
+      "name": "@esbuild/linux-ia32",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-ia32"
+    },
+    {
+      "name": "@esbuild/linux-loong64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-loong64"
+    },
+    {
+      "name": "@esbuild/linux-loong64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-loong64"
+    },
+    {
+      "name": "@esbuild/linux-mips64el",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-mips64el"
+    },
+    {
+      "name": "@esbuild/linux-mips64el",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-mips64el"
+    },
+    {
+      "name": "@esbuild/linux-ppc64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-ppc64"
+    },
+    {
+      "name": "@esbuild/linux-ppc64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-ppc64"
+    },
+    {
+      "name": "@esbuild/linux-riscv64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-riscv64"
+    },
+    {
+      "name": "@esbuild/linux-riscv64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-riscv64"
+    },
+    {
+      "name": "@esbuild/linux-s390x",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-s390x"
+    },
+    {
+      "name": "@esbuild/linux-s390x",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-s390x"
+    },
+    {
+      "name": "@esbuild/linux-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/linux-x64"
+    },
+    {
+      "name": "@esbuild/linux-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/linux-x64"
+    },
+    {
+      "name": "@esbuild/netbsd-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/netbsd-arm64"
+    },
+    {
+      "name": "@esbuild/netbsd-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/netbsd-arm64"
+    },
+    {
+      "name": "@esbuild/netbsd-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/netbsd-x64"
+    },
+    {
+      "name": "@esbuild/netbsd-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/netbsd-x64"
+    },
+    {
+      "name": "@esbuild/openbsd-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/openbsd-arm64"
+    },
+    {
+      "name": "@esbuild/openbsd-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/openbsd-arm64"
+    },
+    {
+      "name": "@esbuild/openbsd-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/openbsd-x64"
+    },
+    {
+      "name": "@esbuild/openbsd-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/openbsd-x64"
+    },
+    {
+      "name": "@esbuild/openharmony-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/openharmony-arm64"
+    },
+    {
+      "name": "@esbuild/openharmony-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/openharmony-arm64"
+    },
+    {
+      "name": "@esbuild/sunos-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/sunos-x64"
+    },
+    {
+      "name": "@esbuild/sunos-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/sunos-x64"
+    },
+    {
+      "name": "@esbuild/win32-arm64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/win32-arm64"
+    },
+    {
+      "name": "@esbuild/win32-arm64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/win32-arm64"
+    },
+    {
+      "name": "@esbuild/win32-ia32",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@esbuild/win32-ia32"
+    },
+    {
+      "name": "@esbuild/win32-ia32",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/win32-ia32"
+    },
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/evanw/esbuild.git",
+      "packagePath": "node_modules/@esbuild/win32-x64"
+    },
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/evanw/esbuild.git",
+      "packagePath": "node_modules/tsx/node_modules/@esbuild/win32-x64"
+    },
+    {
+      "name": "@floating-ui/core",
+      "version": "1.8.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/floating-ui/floating-ui.git",
+      "packagePath": "node_modules/@floating-ui/core"
+    },
+    {
+      "name": "@floating-ui/dom",
+      "version": "1.8.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/floating-ui/floating-ui.git",
+      "packagePath": "node_modules/@floating-ui/dom"
+    },
+    {
+      "name": "@floating-ui/react-dom",
+      "version": "2.1.9",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/floating-ui/floating-ui.git",
+      "packagePath": "node_modules/@floating-ui/react-dom"
+    },
+    {
+      "name": "@floating-ui/utils",
+      "version": "0.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/floating-ui/floating-ui.git",
+      "packagePath": "node_modules/@floating-ui/utils"
+    },
+    {
+      "name": "@hookform/resolvers",
+      "version": "5.9.1",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/react-hook-form/resolvers.git",
+      "packagePath": "node_modules/@hookform/resolvers"
+    },
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/jridgewell/resolve-uri",
+      "packagePath": "node_modules/@jridgewell/resolve-uri"
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/jridgewell/sourcemaps.git",
+      "packagePath": "node_modules/@jridgewell/sourcemap-codec"
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/jridgewell/sourcemaps.git",
+      "packagePath": "node_modules/@jridgewell/trace-mapping"
+    },
+    {
+      "name": "@napi-rs/canvas",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/Brooooooklyn/canvas.git",
+      "packagePath": "node_modules/@napi-rs/canvas"
+    },
+    {
+      "name": "@napi-rs/canvas-android-arm64",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-android-arm64"
+    },
+    {
+      "name": "@napi-rs/canvas-darwin-arm64",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-darwin-arm64"
+    },
+    {
+      "name": "@napi-rs/canvas-darwin-x64",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-darwin-x64"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-arm-gnueabihf",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-arm-gnueabihf"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-arm64-gnu",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-arm64-gnu"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-arm64-musl",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-arm64-musl"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-riscv64-gnu",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-riscv64-gnu"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-x64-gnu",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-x64-gnu"
+    },
+    {
+      "name": "@napi-rs/canvas-linux-x64-musl",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-linux-x64-musl"
+    },
+    {
+      "name": "@napi-rs/canvas-win32-arm64-msvc",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "",
+      "packagePath": "node_modules/@napi-rs/canvas-win32-arm64-msvc"
+    },
+    {
+      "name": "@napi-rs/canvas-win32-x64-msvc",
+      "version": "1.0.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/Brooooooklyn/canvas.git",
+      "packagePath": "node_modules/@napi-rs/canvas-win32-x64-msvc"
+    },
+    {
+      "name": "@oslojs/asn1",
+      "version": "1.0.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/oslo-project/asn1",
+      "packagePath": "node_modules/@oslojs/asn1"
+    },
+    {
+      "name": "@oslojs/binary",
+      "version": "1.0.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/oslo-project/binary",
+      "packagePath": "node_modules/@oslojs/binary"
+    },
+    {
+      "name": "@oslojs/crypto",
+      "version": "1.0.1",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/oslo-project/crypto",
+      "packagePath": "node_modules/@oslojs/crypto"
+    },
+    {
+      "name": "@oslojs/encoding",
+      "version": "1.1.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/oslo-project/encoding",
+      "packagePath": "node_modules/@oslojs/encoding"
+    },
+    {
+      "name": "@oxc-project/types",
+      "version": "0.152.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/oxc-project/oxc.git",
+      "packagePath": "node_modules/@oxc-project/types"
+    },
+    {
+      "name": "@panva/hkdf",
+      "version": "1.2.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "panva/hkdf",
+      "packagePath": "node_modules/@panva/hkdf"
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": true,
+      "repository": "git+https://github.com/microsoft/playwright.git",
+      "packagePath": "node_modules/@playwright/test"
+    },
+    {
+      "name": "@radix-ui/primitive",
+      "version": "1.1.7",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/primitive"
+    },
+    {
+      "name": "@radix-ui/react-arrow",
+      "version": "1.1.15",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-arrow"
+    },
+    {
+      "name": "@radix-ui/react-collection",
+      "version": "1.1.15",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-collection"
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.5",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-compose-refs"
+    },
+    {
+      "name": "@radix-ui/react-context",
+      "version": "1.2.2",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-context"
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "version": "1.1.23",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-dialog"
+    },
+    {
+      "name": "@radix-ui/react-direction",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-direction"
+    },
+    {
+      "name": "@radix-ui/react-dismissable-layer",
+      "version": "1.1.19",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-dismissable-layer"
+    },
+    {
+      "name": "@radix-ui/react-focus-guards",
+      "version": "1.1.6",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-focus-guards"
+    },
+    {
+      "name": "@radix-ui/react-focus-scope",
+      "version": "1.1.16",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-focus-scope"
+    },
+    {
+      "name": "@radix-ui/react-id",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-id"
+    },
+    {
+      "name": "@radix-ui/react-popper",
+      "version": "1.3.7",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-popper"
+    },
+    {
+      "name": "@radix-ui/react-portal",
+      "version": "1.1.17",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-portal"
+    },
+    {
+      "name": "@radix-ui/react-presence",
+      "version": "1.1.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-presence"
+    },
+    {
+      "name": "@radix-ui/react-primitive",
+      "version": "2.1.10",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-primitive"
+    },
+    {
+      "name": "@radix-ui/react-roving-focus",
+      "version": "1.1.19",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-roving-focus"
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.3.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-slot"
+    },
+    {
+      "name": "@radix-ui/react-tabs",
+      "version": "1.1.21",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-tabs"
+    },
+    {
+      "name": "@radix-ui/react-tooltip",
+      "version": "1.2.16",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-tooltip"
+    },
+    {
+      "name": "@radix-ui/react-use-callback-ref",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-callback-ref"
+    },
+    {
+      "name": "@radix-ui/react-use-controllable-state",
+      "version": "1.2.6",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-controllable-state"
+    },
+    {
+      "name": "@radix-ui/react-use-effect-event",
+      "version": "0.0.5",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-effect-event"
+    },
+    {
+      "name": "@radix-ui/react-use-is-hydrated",
+      "version": "0.1.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-is-hydrated"
+    },
+    {
+      "name": "@radix-ui/react-use-layout-effect",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-layout-effect"
+    },
+    {
+      "name": "@radix-ui/react-use-rect",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-rect"
+    },
+    {
+      "name": "@radix-ui/react-use-size",
+      "version": "1.1.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-use-size"
+    },
+    {
+      "name": "@radix-ui/react-visually-hidden",
+      "version": "1.2.11",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/react-visually-hidden"
+    },
+    {
+      "name": "@radix-ui/rect",
+      "version": "1.1.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/radix-ui/primitives.git",
+      "packagePath": "node_modules/@radix-ui/rect"
+    },
+    {
+      "name": "@rjsf/core",
+      "version": "6.11.0",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/rjsf-team/react-jsonschema-form.git",
+      "packagePath": "node_modules/@rjsf/core"
+    },
+    {
+      "name": "@rjsf/utils",
+      "version": "6.11.0",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/rjsf-team/react-jsonschema-form.git",
+      "packagePath": "node_modules/@rjsf/utils"
+    },
+    {
+      "name": "@rjsf/validator-ajv8",
+      "version": "6.11.0",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/rjsf-team/react-jsonschema-form.git",
+      "packagePath": "node_modules/@rjsf/validator-ajv8"
+    },
+    {
+      "name": "@rolldown/binding-android-arm-eabi",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-android-arm-eabi"
+    },
+    {
+      "name": "@rolldown/binding-android-arm64",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-android-arm64"
+    },
+    {
+      "name": "@rolldown/binding-darwin-arm64",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-darwin-arm64"
+    },
+    {
+      "name": "@rolldown/binding-darwin-x64",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-darwin-x64"
+    },
+    {
+      "name": "@rolldown/binding-freebsd-x64",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-freebsd-x64"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-arm-gnueabihf"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-arm64-gnu"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-arm64-musl"
+    },
+    {
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-ppc64-gnu"
+    },
+    {
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-s390x-gnu"
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-x64-gnu"
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-musl",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-linux-x64-musl"
+    },
+    {
+      "name": "@rolldown/binding-openharmony-arm64",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-openharmony-arm64"
+    },
+    {
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@rolldown/binding-win32-arm64-msvc"
+    },
+    {
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/rolldown/rolldown.git",
+      "packagePath": "node_modules/@rolldown/binding-win32-x64-msvc"
+    },
+    {
+      "name": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/rolldown/plugins.git",
+      "packagePath": "node_modules/@rolldown/pluginutils"
+    },
+    {
+      "name": "@standard-schema/utils",
+      "version": "0.3.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/standard-schema/standard-schema",
+      "packagePath": "node_modules/@standard-schema/utils"
+    },
+    {
+      "name": "@types/chai",
+      "version": "5.2.3",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/chai"
+    },
+    {
+      "name": "@types/deep-eql",
+      "version": "4.0.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/deep-eql"
+    },
+    {
+      "name": "@types/estree",
+      "version": "1.0.9",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/estree"
+    },
+    {
+      "name": "@types/json-schema",
+      "version": "7.0.15",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/json-schema"
+    },
+    {
+      "name": "@types/node",
+      "version": "26.6.4",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/node"
+    },
+    {
+      "name": "@types/papaparse",
+      "version": "5.5.2",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/papaparse"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/react"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "packagePath": "node_modules/@types/react-dom"
+    },
+    {
+      "name": "@typescript/typescript-aix-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-aix-ppc64"
+    },
+    {
+      "name": "@typescript/typescript-darwin-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-darwin-arm64"
+    },
+    {
+      "name": "@typescript/typescript-darwin-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-darwin-x64"
+    },
+    {
+      "name": "@typescript/typescript-freebsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-freebsd-arm64"
+    },
+    {
+      "name": "@typescript/typescript-freebsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-freebsd-x64"
+    },
+    {
+      "name": "@typescript/typescript-linux-arm",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-arm"
+    },
+    {
+      "name": "@typescript/typescript-linux-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-arm64"
+    },
+    {
+      "name": "@typescript/typescript-linux-loong64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-loong64"
+    },
+    {
+      "name": "@typescript/typescript-linux-mips64el",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-mips64el"
+    },
+    {
+      "name": "@typescript/typescript-linux-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-ppc64"
+    },
+    {
+      "name": "@typescript/typescript-linux-riscv64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-riscv64"
+    },
+    {
+      "name": "@typescript/typescript-linux-s390x",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-s390x"
+    },
+    {
+      "name": "@typescript/typescript-linux-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-linux-x64"
+    },
+    {
+      "name": "@typescript/typescript-netbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-netbsd-arm64"
+    },
+    {
+      "name": "@typescript/typescript-netbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-netbsd-x64"
+    },
+    {
+      "name": "@typescript/typescript-openbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-openbsd-arm64"
+    },
+    {
+      "name": "@typescript/typescript-openbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-openbsd-x64"
+    },
+    {
+      "name": "@typescript/typescript-sunos-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-sunos-x64"
+    },
+    {
+      "name": "@typescript/typescript-win32-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/@typescript/typescript-win32-arm64"
+    },
+    {
+      "name": "@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/microsoft/TypeScript.git",
+      "packagePath": "node_modules/@typescript/typescript-win32-x64"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.1.1",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "git+https://github.com/vitejs/vite-plugin-react.git",
+      "packagePath": "node_modules/@vitejs/plugin-react"
+    },
+    {
+      "name": "@vitest/mocker",
+      "version": "5.0.3",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/vitest-dev/vitest.git",
+      "packagePath": "node_modules/@vitest/mocker"
+    },
+    {
+      "name": "@vitest/spy",
+      "version": "5.0.3",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/vitest-dev/vitest.git",
+      "packagePath": "node_modules/@vitest/spy"
+    },
+    {
+      "name": "@x0k/json-schema-merge",
+      "version": "1.1.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/x0k/json-schema-merge.git",
+      "packagePath": "node_modules/@x0k/json-schema-merge"
+    },
+    {
+      "name": "ajv",
+      "version": "8.20.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "ajv-validator/ajv",
+      "packagePath": "node_modules/ajv"
+    },
+    {
+      "name": "ajv-formats",
+      "version": "2.1.1",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/ajv-validator/ajv-formats.git",
+      "packagePath": "node_modules/ajv-formats"
+    },
+    {
+      "name": "aria-hidden",
+      "version": "1.2.6",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/theKashey/aria-hidden.git",
+      "packagePath": "node_modules/aria-hidden"
+    },
+    {
+      "name": "assertion-error",
+      "version": "2.0.1",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git@github.com:chaijs/assertion-error.git",
+      "packagePath": "node_modules/assertion-error"
+    },
+    {
+      "name": "axe-core",
+      "version": "4.13.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/dequelabs/axe-core.git",
+      "packagePath": "node_modules/axe-core"
+    },
+    {
+      "name": "chai",
+      "version": "6.3.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/chaijs/chai",
+      "packagePath": "node_modules/chai"
+    },
+    {
+      "name": "convex",
+      "version": "1.46.0",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/get-convex/convex-backend.git",
+      "packagePath": "node_modules/convex"
+    },
+    {
+      "name": "convex-test",
+      "version": "0.0.60",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": true,
+      "repository": "https://github.com/get-convex/convex-test",
+      "packagePath": "node_modules/convex-test"
+    },
+    {
+      "name": "cookie",
+      "version": "1.1.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "jshttp/cookie",
+      "packagePath": "node_modules/cookie"
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/frenic/csstype",
+      "packagePath": "node_modules/csstype"
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "git://github.com/lovell/detect-libc.git",
+      "packagePath": "node_modules/detect-libc"
+    },
+    {
+      "name": "detect-node-es",
+      "version": "1.1.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/thekashey/detect-node",
+      "packagePath": "node_modules/detect-node-es"
+    },
+    {
+      "name": "es-module-lexer",
+      "version": "2.3.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/guybedford/es-module-lexer.git",
+      "packagePath": "node_modules/es-module-lexer"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.27.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/evanw/esbuild.git",
+      "packagePath": "node_modules/esbuild"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/evanw/esbuild.git",
+      "packagePath": "node_modules/tsx/node_modules/esbuild"
+    },
+    {
+      "name": "estree-walker",
+      "version": "3.0.3",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/Rich-Harris/estree-walker",
+      "packagePath": "node_modules/estree-walker"
+    },
+    {
+      "name": "expect-type",
+      "version": "1.4.0",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/mmkal/expect-type.git",
+      "packagePath": "node_modules/expect-type"
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/epoberezkin/fast-deep-equal.git",
+      "packagePath": "node_modules/fast-deep-equal"
+    },
+    {
+      "name": "fast-equals",
+      "version": "6.0.4",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/planttheidea/fast-equals.git",
+      "packagePath": "node_modules/fast-equals"
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.8",
+      "license": "BSD-3-Clause",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/fastify/fast-uri.git",
+      "packagePath": "node_modules/ajv/node_modules/fast-uri"
+    },
+    {
+      "name": "fast-uri",
+      "version": "4.2.1",
+      "license": "BSD-3-Clause",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/fastify/fast-uri.git",
+      "packagePath": "node_modules/fast-uri"
+    },
+    {
+      "name": "fdir",
+      "version": "6.5.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/thecodrr/fdir.git",
+      "packagePath": "node_modules/fdir"
+    },
+    {
+      "name": "fsevents",
+      "version": "2.3.3",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/fsevents"
+    },
+    {
+      "name": "get-nonce",
+      "version": "1.0.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git@github.com:theKashey/get-nonce.git",
+      "packagePath": "node_modules/get-nonce"
+    },
+    {
+      "name": "is-network-error",
+      "version": "1.3.2",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "sindresorhus/is-network-error",
+      "packagePath": "node_modules/is-network-error"
+    },
+    {
+      "name": "jose",
+      "version": "5.10.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "panva/jose",
+      "packagePath": "node_modules/@convex-dev/auth/node_modules/jose"
+    },
+    {
+      "name": "jose",
+      "version": "6.2.12",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "panva/jose",
+      "packagePath": "node_modules/jose"
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/epoberezkin/json-schema-traverse.git",
+      "packagePath": "node_modules/json-schema-traverse"
+    },
+    {
+      "name": "jsonpointer",
+      "version": "5.0.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/janl/node-jsonpointer.git",
+      "packagePath": "node_modules/jsonpointer"
+    },
+    {
+      "name": "jwt-decode",
+      "version": "4.0.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git://github.com/auth0/jwt-decode",
+      "packagePath": "node_modules/jwt-decode"
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/parcel-bundler/lightningcss.git",
+      "packagePath": "node_modules/lightningcss"
+    },
+    {
+      "name": "lightningcss-android-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-android-arm64"
+    },
+    {
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-darwin-arm64"
+    },
+    {
+      "name": "lightningcss-darwin-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-darwin-x64"
+    },
+    {
+      "name": "lightningcss-freebsd-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-freebsd-x64"
+    },
+    {
+      "name": "lightningcss-linux-arm-gnueabihf",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-linux-arm-gnueabihf"
+    },
+    {
+      "name": "lightningcss-linux-arm64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-linux-arm64-gnu"
+    },
+    {
+      "name": "lightningcss-linux-arm64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-linux-arm64-musl"
+    },
+    {
+      "name": "lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-linux-x64-gnu"
+    },
+    {
+      "name": "lightningcss-linux-x64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-linux-x64-musl"
+    },
+    {
+      "name": "lightningcss-win32-arm64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "",
+      "packagePath": "node_modules/lightningcss-win32-arm64-msvc"
+    },
+    {
+      "name": "lightningcss-win32-x64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/parcel-bundler/lightningcss.git",
+      "packagePath": "node_modules/lightningcss-win32-x64-msvc"
+    },
+    {
+      "name": "lucia",
+      "version": "3.2.2",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/pilcrowOnPaper/lucia",
+      "packagePath": "node_modules/lucia"
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.51.0",
+      "license": "ISC",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/lucide-icons/lucide.git",
+      "packagePath": "node_modules/lucide-react"
+    },
+    {
+      "name": "magic-string",
+      "version": "1.4.2",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/Rich-Harris/magic-string.git",
+      "packagePath": "node_modules/magic-string"
+    },
+    {
+      "name": "markdown-to-jsx",
+      "version": "9.10.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/quantizor/markdown-to-jsx.git",
+      "packagePath": "node_modules/markdown-to-jsx"
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.19",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "ai/nanoid",
+      "packagePath": "node_modules/nanoid"
+    },
+    {
+      "name": "oauth4webapi",
+      "version": "3.8.8",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "panva/oauth4webapi",
+      "packagePath": "node_modules/oauth4webapi"
+    },
+    {
+      "name": "obug",
+      "version": "2.2.1",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/sxzz/obug.git",
+      "packagePath": "node_modules/obug"
+    },
+    {
+      "name": "papaparse",
+      "version": "5.7.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/mholt/PapaParse.git",
+      "packagePath": "node_modules/papaparse"
+    },
+    {
+      "name": "path-to-regexp",
+      "version": "6.3.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/pillarjs/path-to-regexp.git",
+      "packagePath": "node_modules/path-to-regexp"
+    },
+    {
+      "name": "pdfjs-dist",
+      "version": "6.3.289",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/mozilla/pdf.js.git",
+      "packagePath": "node_modules/pdfjs-dist"
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "direct": false,
+      "development": true,
+      "repository": "alexeyraspopov/picocolors",
+      "packagePath": "node_modules/picocolors"
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.7",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "micromatch/picomatch",
+      "packagePath": "node_modules/picomatch"
+    },
+    {
+      "name": "playwright",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/microsoft/playwright.git",
+      "packagePath": "node_modules/playwright"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/microsoft/playwright.git",
+      "packagePath": "node_modules/playwright-core"
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.28",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "postcss/postcss",
+      "packagePath": "node_modules/postcss"
+    },
+    {
+      "name": "preact",
+      "version": "10.24.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "preactjs/preact",
+      "packagePath": "node_modules/preact"
+    },
+    {
+      "name": "preact-render-to-string",
+      "version": "6.5.11",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/preactjs/preact-render-to-string",
+      "packagePath": "node_modules/preact-render-to-string"
+    },
+    {
+      "name": "prettier",
+      "version": "3.9.9",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "prettier/prettier",
+      "packagePath": "node_modules/prettier"
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/react/react.git",
+      "packagePath": "node_modules/react"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/react/react.git",
+      "packagePath": "node_modules/react-dom"
+    },
+    {
+      "name": "react-hook-form",
+      "version": "7.89.0",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "https://github.com/react-hook-form/react-hook-form",
+      "packagePath": "node_modules/react-hook-form"
+    },
+    {
+      "name": "react-is",
+      "version": "18.3.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/facebook/react.git",
+      "packagePath": "node_modules/react-is"
+    },
+    {
+      "name": "react-remove-scroll",
+      "version": "2.7.2",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/theKashey/react-remove-scroll",
+      "packagePath": "node_modules/react-remove-scroll"
+    },
+    {
+      "name": "react-remove-scroll-bar",
+      "version": "2.3.8",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/theKashey/react-remove-scroll-bar",
+      "packagePath": "node_modules/react-remove-scroll-bar"
+    },
+    {
+      "name": "react-style-singleton",
+      "version": "2.2.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/theKashey/react-style-singleton",
+      "packagePath": "node_modules/react-style-singleton"
+    },
+    {
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "floatdrop/require-from-string",
+      "packagePath": "node_modules/require-from-string"
+    },
+    {
+      "name": "rolldown",
+      "version": "1.2.12",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/rolldown/rolldown.git",
+      "packagePath": "node_modules/rolldown"
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/react/react.git",
+      "packagePath": "node_modules/scheduler"
+    },
+    {
+      "name": "server-only",
+      "version": "0.0.1",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://reactjs.org/",
+      "packagePath": "node_modules/server-only"
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "license": "BSD-3-Clause",
+      "direct": false,
+      "development": true,
+      "repository": "7rulnik/source-map-js",
+      "packagePath": "node_modules/source-map-js"
+    },
+    {
+      "name": "std-env",
+      "version": "4.3.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "unjs/std-env",
+      "packagePath": "node_modules/std-env"
+    },
+    {
+      "name": "tinybench",
+      "version": "6.2.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "tinylibs/tinybench",
+      "packagePath": "node_modules/tinybench"
+    },
+    {
+      "name": "tinyexec",
+      "version": "1.3.1",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/tinylibs/tinyexec.git",
+      "packagePath": "node_modules/tinyexec"
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/SuperchupuDev/tinyglobby.git",
+      "packagePath": "node_modules/tinyglobby"
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "license": "0BSD",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/Microsoft/tslib.git",
+      "packagePath": "node_modules/tslib"
+    },
+    {
+      "name": "tsx",
+      "version": "4.23.15",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "privatenumber/tsx",
+      "packagePath": "node_modules/tsx"
+    },
+    {
+      "name": "typescript",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "direct": true,
+      "development": true,
+      "repository": "https://github.com/microsoft/TypeScript.git",
+      "packagePath": "node_modules/typescript"
+    },
+    {
+      "name": "undici-types",
+      "version": "8.9.0",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "git+https://github.com/nodejs/undici.git",
+      "packagePath": "node_modules/undici-types"
+    },
+    {
+      "name": "use-callback-ref",
+      "version": "1.3.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/theKashey/use-callback-ref/",
+      "packagePath": "node_modules/use-callback-ref"
+    },
+    {
+      "name": "use-sidecar",
+      "version": "1.1.3",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "https://github.com/theKashey/use-sidecar",
+      "packagePath": "node_modules/use-sidecar"
+    },
+    {
+      "name": "vite",
+      "version": "8.3.2",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "git+https://github.com/vitejs/vite.git",
+      "packagePath": "node_modules/vite"
+    },
+    {
+      "name": "vitest",
+      "version": "5.0.3",
+      "license": "MIT",
+      "direct": true,
+      "development": true,
+      "repository": "git+https://github.com/vitest-dev/vitest.git",
+      "packagePath": "node_modules/vitest"
+    },
+    {
+      "name": "why-is-node-running",
+      "version": "3.2.1",
+      "license": "MIT",
+      "direct": false,
+      "development": true,
+      "repository": "https://github.com/mafintosh/why-is-node-running.git",
+      "packagePath": "node_modules/why-is-node-running"
+    },
+    {
+      "name": "ws",
+      "version": "8.21.0",
+      "license": "MIT",
+      "direct": false,
+      "development": false,
+      "repository": "git+https://github.com/websockets/ws.git",
+      "packagePath": "node_modules/ws"
+    },
+    {
+      "name": "zod",
+      "version": "3.25.76",
+      "license": "MIT",
+      "direct": true,
+      "development": false,
+      "repository": "git+https://github.com/colinhacks/zod.git",
+      "packagePath": "node_modules/zod"
+    }
+  ]
+}

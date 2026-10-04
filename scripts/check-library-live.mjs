@@ -1,0 +1,46 @@
+import { writeFile, mkdir } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { ConvexHttpClient } from 'convex/browser';
+import { makeFunctionReference as ref } from 'convex/server';
+import { chromium } from 'playwright';
+import AxeBuilder from '@axe-core/playwright';
+
+const base = process.env.E2E_URL || 'https://agile-kiwi-698.eu-west-1.convex.site';
+const client = new ConvexHttpClient(base.replace('.convex.site', '.convex.cloud'));
+const video = (await client.query(ref('knowledge:page'), { type:'video', paginationOpts:{numItems:100,cursor:null} })).page.find(row=>row.metadata?.videoUrl === '/media/splot-intro.mp4');
+const course = (await client.query(ref('knowledge:page'), { type:'course', paginationOpts:{numItems:100,cursor:null} })).page.find(row=>row.metadata?.steps?.length === 5);
+assert(video && course, 'Published demo video and course must be readable anonymously.');
+const indicators = await client.query(ref('knowledge:indicators'), {});
+assert(indicators.rows.length >= 3 && indicators.rows.every(row=>row.sources.length && row.year && row.unit && row.territory));
+const range = await fetch(base + video.metadata.videoUrl, { headers:{Range:'bytes=0-1023'} });
+assert.equal(range.status,206); assert.equal((await range.arrayBuffer()).byteLength,1024);
+const errors=[]; const browser=await chromium.launch();
+await mkdir('artifacts/screenshots',{recursive:true});
+try {
+  const context=await browser.newContext({viewport:{width:1440,height:950}});
+  const page=await context.newPage();
+  page.on('pageerror',error=>errors.push(error.message));
+  await page.goto(`${base}/#/innovation/${video._id}`);
+  const player=page.locator('video'); await player.waitFor();
+  await page.waitForFunction(()=>{const v=document.querySelector('video');return v?.readyState>=2 && v.textTracks[0]?.cues?.length===2;});
+  await player.scrollIntoViewIfNeeded();
+  const media=await player.evaluate(async v=>{await v.play(); await new Promise(resolve=>setTimeout(resolve,500)); const progressed=v.currentTime>0;v.pause();v.currentTime=18; await new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}));return {duration:v.duration,progressed,seek:v.currentTime,cues:[...v.textTracks[0].cues].map(c=>({start:c.startTime,end:c.endTime,text:c.text})),captionsMode:v.textTracks[0].mode};});
+  assert(media.progressed && media.seek===18 && Math.abs(media.duration-26)<0.1 && media.captionsMode==='showing');
+  await page.screenshot({path:'artifacts/screenshots/13-library-video.png'});
+  const videoAxe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+  await page.goto(`${base}/#/innovation/${course._id}`);
+  await page.locator('.process-flow li').last().waitFor(); assert.equal(await page.locator('.process-flow li').count(),5);
+  await page.getByRole('heading',{name:'Przejdź materiał krok po kroku'}).scrollIntoViewIfNeeded();
+  await page.screenshot({path:'artifacts/screenshots/14-library-course.png'});
+  const courseAxe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+  await page.goto(base+'/#/library');await page.getByRole('button',{name:'Mapa wyzwań'}).click();
+  await page.getByRole('columnheader',{name:'Terytorium'}).waitFor();assert.equal(await page.locator('.regional-map tbody tr').count() || await page.locator('table tbody tr').count(),indicators.rows.length);
+  await page.getByRole('region',{name:'Mapa regionalnych wskaźników'}).evaluate(el=>el.scrollIntoView({block:'start'}));
+  await page.screenshot({path:'artifacts/screenshots/05-library-map.png'});
+  const mapAxe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+  const accessibility=[['video',videoAxe],['course',courseAxe],['map',mapAxe]].map(([view,report])=>({view,violations:report.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>n.target)}))}));
+  const report={testedAt:new Date().toISOString(),base,videoId:video._id,courseId:course._id,rangeStatus:range.status,contentRange:range.headers.get('content-range'),media,courseSteps:5,indicators:indicators.rows.length,accessibility,browserErrors:errors};
+  await writeFile('artifacts/library-media-live.json',JSON.stringify(report,null,2));
+  assert.equal(errors.length,0);assert(!accessibility.some(x=>x.violations.some(v=>['critical','serious'].includes(v.impact))));
+  console.log(JSON.stringify(report));
+} finally {await browser.close();}

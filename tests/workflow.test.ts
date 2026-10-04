@@ -1,0 +1,165 @@
+import { describe, it, expect } from 'vitest';
+import { convexTest } from 'convex-test';
+import schema from '../convex/schema';
+import type { Id } from '../convex/_generated/dataModel';
+import { api } from '../convex/_generated/api';
+const modules = import.meta.glob('../convex/**/*.ts');
+const endpoint: any = api;
+async function setup() {
+  const t = convexTest(schema, modules);
+  const ids = await t.run(async ctx => {
+    const users: any = {};
+    for (const role of ['institution', 'resident', 'expert', 'admin', 'other']) {
+      const id = await ctx.db.insert('users', { name: role });
+      await ctx.db.insert('profiles', { userId: id, name: role, role: role === 'other' ? 'resident' : role }); users[role] = id;
+    }
+    const now = Date.now();
+    const base = { ownerId: users.institution, memberIds: [], version: 1, createdAt: now, updatedAt: now };
+    const need = await ctx.db.insert('records', { ...base, kind: 'need', title: 'Samotność', status: 'draft', data: { description: 'Brakuje spotkań sąsiedzkich' } });
+    const source = await ctx.db.insert('sources', { title: 'Źródło testowe', url: '/sources/test.html', publisher: 'Test', retrievedAt: now, geography: 'Syntetyczna', rights: 'Własne', reviewAt: now + 90 * 86400000, hash: 'source-v1', version: 1, status: 'published', demo: true });
+    const innovation = await ctx.db.insert('knowledge', { stableId: 'workflow-fixture', version: 1, status: 'published', kind: 'innovation', title: 'Spotkania sąsiedzkie', summary: 'Syntetyczny scenariusz spotkań', body: 'Scenariusz techniczny', tags: [], problemTags: [], audienceTags: [], sourceIds: [source], requirements: [], evidenceLevel: 'concept', demo: true, searchText: 'Spotkania', publishedScope: 'public:published' });
+    const card = await ctx.db.insert('records', { ...base, kind: 'card', title: 'Karta sąsiedztwa', status: 'approved', data: { needId: need, innovationId: innovation, innovationVersion: 1, sourceIds: [source], goal: 'Spotkania sąsiedzkie', requirements: [{ key: 'room', label: 'Sala', mandatory: true, operator: 'eq', expected: true, allowPartner: true, approved: true, reviewAt: now + 30 * 86400000 }], resources: {}, secretNote: 'PRIVATE CARD' } });
+    return { ...users, need, card, source, innovation, now };
+  });
+  const as = (role: string) => t.withIdentity({ subject: ids[role] });
+  const save = (role: string, kind: string, data: any, title = `Test ${kind}`) => as(role).mutation(endpoint.hub.save, { kind, data, title });
+  const transition = (role: string, id: any, action: string, data?: any) => as(role).mutation(endpoint.hub.transition, { id, action, ...(data ? { data } : {}) });
+  return { t, ids, as, save, transition };
+}
+describe('Obieg współpracy i granice dostępu', () => {
+  it('odrzuca wycofane źródło przy tworzeniu Karty oraz źródło wygasające przed końcem pilotażu', async () => {
+    const { t, ids, save, transition } = await setup();
+    await t.run(ctx => ctx.db.patch(ids.source, { status: 'withdrawn' }));
+    await expect(save('institution', 'card', { needId: ids.need, innovationId: ids.innovation })).rejects.toThrow('Źródło Karty');
+    await t.run(async ctx => { await ctx.db.patch(ids.source, { status: 'published', reviewAt: ids.now + 50000 }); const card = await ctx.db.get(ids.card as Id<'records'>); await ctx.db.patch(ids.card, { data: { ...card!.data, resources: { room: { value: true, validUntil: ids.now + 200000 } } } }); });
+    const pilot = await save('institution', 'pilot', { cardId: ids.card, capacity: 2, startsAt: ids.now + 10000, endsAt: ids.now + 100000 });
+    await transition('admin', pilot, 'recruit');
+    await t.run(ctx => ctx.db.patch(ids.source, { status: 'withdrawn' }));
+    await expect(transition('admin', pilot, 'start')).rejects.toThrow('Źródło Karty');
+    await t.run(ctx => ctx.db.patch(ids.source, { status: 'published' }));
+    await expect(transition('admin', pilot, 'start')).rejects.toThrow('cały okres pilotażu');
+    await t.run(ctx => ctx.db.patch(ids.source, { reviewAt: ids.now - 1 }));
+    await expect(save('institution', 'card', { needId: ids.need, innovationId: ids.innovation })).rejects.toThrow('Źródło Karty');
+    await t.run(ctx => ctx.db.patch(ids.source, { status: 'published', reviewAt: ids.now + 200000 }));
+    expect((await transition('admin', pilot, 'start')).status).toBe('running');
+  });
+  it('przegląd źródeł wymaga decyzji opiekuna i nowych akceptacji bez podmiany przypiętego planu', async () => {
+    const { t, ids, as, save, transition } = await setup();
+    const pilot = await save('institution', 'pilot', { cardId: ids.card, capacity: 2, startsAt: ids.now + 10000, endsAt: ids.now + 100000 });
+    await transition('admin', pilot, 'recruit');
+    await t.run(async ctx => { const card = await ctx.db.get(ids.card as Id<'records'>); await ctx.db.patch(ids.card, { data: { ...card!.data, sourceReviewRequired: true, approvals: { author: true, operator: true } } }); });
+    await expect(transition('admin', pilot, 'start')).rejects.toThrow('świadomego przeglądu');
+    await as('institution').mutation(endpoint.hub.save, { kind: 'card', id: ids.card, expectedVersion: 1, title: 'Karta po korekcie', data: { sourceReviewRequired: false } });
+    let card = await as('institution').query(endpoint.hub.get, { id: ids.card });
+    expect(card.data.sourceReviewRequired).toBe(true);
+    await expect(transition('institution', ids.card, 'approve')).rejects.toThrow('świadomego przeglądu');
+    const decision = { expectedVersion: card.version, reason: 'Źródła nadal aktualne; zakres lokalnego planu pozostaje zgodny.' };
+    await expect(transition('institution', ids.card, 'review_sources', decision)).rejects.toThrow('opiekuna');
+    await expect(transition('admin', ids.card, 'review_sources', { ...decision, expectedVersion: 1 })).rejects.toThrow('innej sesji');
+    card = await transition('admin', ids.card, 'review_sources', decision);
+    expect(card.version).toBe(decision.expectedVersion + 1); expect(card.data.sourceReviewRequired).toBe(false); expect(card.data.approvals).toEqual({}); expect(card.data.innovationId).toBe(ids.innovation); expect(card.data.sourceReviewDecision.reason).toBe(decision.reason);
+    expect((await transition('institution', ids.card, 'approve')).status).toBe('expert_review');
+    expect((await transition('admin', ids.card, 'approve')).status).toBe('approved');
+    await t.run(ctx => ctx.db.patch(ids.innovation, { status: 'superseded' }));
+    await expect(transition('admin', ids.card, 'review_sources', { ...decision, expectedVersion: card.version })).rejects.toThrow('nową Kartę');
+  });
+  it('nadaje wersję szablonu nowej Canwie i zachowuje ją w historii zamiast ufać klientowi', async () => {
+    const { as, save } = await setup();
+    const id = await save('institution', 'idea', { problem: 'Potrzeba spotkań', canvas: { activities: 'Pierwszy szkic' }, canvasTemplateVersion: 'forged' });
+    await as('institution').mutation(endpoint.hub.save, { kind: 'idea', id, title: 'Zmieniona Canwa', data: { canvas: { activities: 'Drugi szkic' }, canvasTemplateVersion: 'forged-v2' } });
+    const idea = await as('institution').query(endpoint.hub.get, { id });
+    expect(idea.data.canvasTemplateVersion).toBe('demo-1'); expect(idea.history[0].data.canvasTemplateVersion).toBe('demo-1'); expect(idea.history[0].data.canvas.activities).toBe('Pierwszy szkic');
+  });
+  it('wymaga odczytanej wersji Karty i odrzuca zapis oraz akceptację starszego szkicu', async () => {
+    const { as, ids, transition } = await setup();
+    const update = { id: ids.card, kind: 'card', title: 'Mój szkic', data: { goal: 'Lokalna zmiana' } };
+    await expect(as('institution').mutation(endpoint.hub.save, update)).rejects.toThrow('numeru odczytanej wersji');
+    await expect(as('institution').mutation(endpoint.hub.save, { ...update, expectedVersion: 0 })).rejects.toThrow('zmieniony w innej sesji');
+    await expect(transition('institution', ids.card, 'approve', { expectedVersion: 0 })).rejects.toThrow('zmieniła się w innej sesji');
+    const current = await as('institution').query(endpoint.hub.get, { id: ids.card });
+    expect(current.version).toBe(1);
+    expect(current.data.goal).toBe('Spotkania sąsiedzkie');
+  });
+  it('pomocnik zapisuje potrzebę dla autora, ale nie może potwierdzić jej za niego', async () => {
+    const {t,as,ids,transition} = await setup();
+    await t.run(async ctx => ctx.db.patch(ids.resident, {email:'autor@example.test'}));
+    const args = {authorEmail:'autor@example.test',description:'Potrzebujemy dostępnych spotkań sąsiedzkich.',group:'Seniorzy',municipality:'Gmina demo'};
+    await expect(as('institution').mutation(endpoint.assistance.create,args)).rejects.toThrow('uprawnień');
+    const id = await as('admin').mutation(endpoint.assistance.create,args);
+    let record = await as('resident').query(endpoint.hub.get,{id});
+    expect(record.ownerId).toBe(ids.resident); expect(record.data.assistance.helperId).toBe(ids.admin);
+    await expect(as('other').query(endpoint.hub.get,{id})).rejects.toThrow('brak dostępu');
+    await expect(as('admin').mutation(endpoint.assistance.confirm,{id,expectedVersion:1})).rejects.toThrow('Tylko autor');
+    await expect(transition('resident',id,'watch')).rejects.toThrow('potwierdzeniu');
+    await as('resident').mutation(endpoint.assistance.confirm,{id,expectedVersion:1});
+    await as('admin').mutation(endpoint.hub.save,{id,kind:'need',title:'Zmieniona potrzeba',data:{description:'Treść zmieniona po wcześniejszym potwierdzeniu przez autora.',authorConfirmed:true}});
+    record = await as('resident').query(endpoint.hub.get,{id});
+    expect(record.data.authorConfirmed).toBe(false); expect(record.data.watch).toBe(false);
+    await expect(as('resident').mutation(endpoint.assistance.confirm,{id,expectedVersion:2})).rejects.toThrow('zmieniła');
+    await as('resident').mutation(endpoint.assistance.confirm,{id,expectedVersion:record.version});
+    expect((await as('resident').query(endpoint.hub.get,{id})).data.authorConfirmed).toBe(true);
+  });
+  it('odrzuca cudzą sprawę, trendy i rozmowę, zachowuje odpowiedź w uprawnionych sesjach', async () => {
+    const { as, save, transition, ids } = await setup();
+    const thread = await save('institution', 'thread', { recordId: ids.need, description: 'Potrzebuję wsparcia' });
+    const message = await save('admin', 'message', { threadId: thread, body: 'Ustalmy termin konsultacji.' });
+    expect((await as('institution').query(endpoint.hub.get, { id: message })).data.body).toContain('konsultacji');
+    await transition('institution', thread, 'read');
+    expect((await as('admin').query(endpoint.hub.get, { id: message })).data.readBy[ids.institution]).toBeGreaterThan(0);
+    for (const id of [ids.need, thread, message]) await expect(as('other').query(endpoint.hub.get, { id })).rejects.toThrow('brak dostępu');
+    await expect(as('institution').query(endpoint.hub.adminStats, {})).rejects.toThrow('uprawnień');
+    await expect(as('resident').mutation(endpoint.hub.assign, { id: ids.need, userId: ids.expert })).rejects.toThrow('uprawnień');
+  });
+  it('ogranicza rezerwacje, wycofanie blokuje przyjęty pilotaż', async () => {
+    const { t, ids, save, transition } = await setup();
+    const startsAt = ids.now + 10000, endsAt = ids.now + 100000;
+    const offer = await save('expert', 'offer', { resourceKey: 'room', capacity: 1, validUntil: ids.now + 200000 });
+    const invite = { offerId: offer, cardId: ids.card, scope: 'Sala na spotkanie', startsAt, endsAt, quantity: 1 };
+    const first = await save('institution', 'partnership', invite);
+    const second = await save('institution', 'partnership', invite);
+    await expect(transition('institution', first, 'accept')).rejects.toThrow('właściciel');
+    await transition('expert', first, 'accept');
+    await expect(transition('expert', second, 'accept')).rejects.toThrow('zarezerwowany');
+    const pilot = await save('institution', 'pilot', { cardId: ids.card, capacity: 3, startsAt, endsAt });
+    await transition('admin', pilot, 'recruit'); await transition('admin', pilot, 'start');
+    await transition('expert', offer, 'withdraw');
+    expect((await t.run(ctx => ctx.db.get(pilot as Id<'records'>)))?.status).toBe('blocked');
+    expect((await t.run(ctx => ctx.db.get(ids.card as Id<'records'>)))?.status).toBe('review_required');
+    expect((await t.run(ctx => ctx.db.get(first as Id<'records'>)))?.status).toBe('conflict');
+    await expect(transition('admin', pilot, 'resume')).rejects.toThrow('zatwierdzenia');
+  });
+  it('egzekwuje bariery i miejsca, oddziela feedback od publikowanej wiedzy', async () => {
+    const { t, ids, as, save, transition } = await setup();
+    const pilot = await save('institution', 'pilot', { cardId: ids.card, capacity: 1, startsAt: ids.now + 10000, endsAt: ids.now + 100000 });
+    await transition('admin', pilot, 'recruit');
+    await expect(transition('admin', pilot, 'start')).rejects.toThrow('obowiązkowego warunku');
+    await t.run(async ctx => { const card = (await ctx.db.get(ids.card as Id<'records'>))!; await ctx.db.patch(ids.card, { data: { ...card.data, resources: { room: { value: true, validUntil: ids.now + 200000 } } } }); });
+    const enrollment = await save('resident', 'enrollment', { pilotId: pilot, consent: true });
+    expect(await save('resident', 'enrollment', { pilotId: pilot, consent: true })).toBe(enrollment);
+    const extra = await save('other', 'enrollment', { pilotId: pilot, consent: true });
+    await transition('admin', enrollment, 'accept');
+    await expect(transition('admin', extra, 'accept')).rejects.toThrow('miejsca');
+    const publicPilot = await as('resident').query(endpoint.hub.get, { id: pilot });
+    expect(publicPilot.data.cardSnapshot).toBeUndefined();
+    await transition('admin', pilot, 'start');
+    await expect(save('other', 'feedback', { pilotId: pilot, rating: 4 })).rejects.toThrow();
+    const feedback = await save('resident', 'feedback', { pilotId: pilot, rating: 4, barrier: 'Za mało informacji', improvement: 'Wyraźniejsze zaproszenie', before: 2, after: 4, measurementType: 'self_report' });
+    await transition('resident', feedback, 'submit');
+    await expect(as('other').query(endpoint.hub.get, { id: feedback })).rejects.toThrow('brak dostępu');
+    await transition('admin', pilot, 'complete');
+    await transition('admin', pilot, 'review', { summary: 'Jedna osoba zgłosiła zrozumiałość procesu.', limitations: 'Próba syntetyczna n=1, bez grupy porównawczej.' });
+    const reviewed: any = await transition('admin', pilot, 'publish_experience');
+    const knowledge = await t.run(ctx => ctx.db.get(reviewed.data.experienceId as Id<'knowledge'>));
+    expect(knowledge?.status).toBe('review'); expect(knowledge?.publishedScope).toBe('private:review');
+    expect(reviewed.data.review.causalEvidence).toBe(false);
+    expect((await as('institution').query(endpoint.hub.pilotResults, { id: pilot })).responses).toBe(1);
+  });
+  it('wymaga dwóch różnych zatwierdzających Kartę i odrzuca stare edycje', async () => {
+    const { t, ids, as, transition } = await setup();
+    await t.run(async ctx => { const card = await ctx.db.get(ids.card as Id<'records'>); await ctx.db.patch(ids.card, { status: 'draft', data: { ...card!.data, approvals: {}, requirements: [] } }); });
+    expect((await transition('institution', ids.card, 'approve')).status).toBe('expert_review');
+    expect((await transition('institution', ids.card, 'approve')).status).toBe('expert_review');
+    expect((await transition('admin', ids.card, 'approve')).status).toBe('approved');
+    await expect(as('institution').mutation(endpoint.hub.save, { id: ids.need, kind: 'need', title: 'Nowy opis', expectedVersion: 0, data: { description: 'Dostatecznie długi nowy opis.' } })).rejects.toThrow('innej sesji');
+  });
+});
