@@ -6,7 +6,7 @@ Mieszkańcy zgłaszają problem. Instytucja szuka rozwiązania, warunków jego z
 
 Wpisz potrzebę, porównaj propozycje i otwórz źródło. Odpowiedz na pytanie o lokalne warunki, przygotuj plan usługi i zaproś partnera. Jego potwierdzenie rezerwuje zasób. Pomysł przenieś do formularza wybranego naboru, a wyniki pilotażu przekaż kuratorowi do publikacji. Gdy pojawi się nowa wiedza, Splot wróci do obserwowanej potrzeby.
 
-Siedem modułów HubMI pracuje na wspólnych sprawach. ROPS widzi zgłoszenia, przydziela opiekunów, prowadzi nabory i aktualizuje bibliotekę. Autor decyduje, które propozycje asystenta wstawić do dokumentu. Wersje, źródła i potwierdzenia pozostają przy sprawie.
+Dopasowanie pokazuje źródła i konkretne fragmenty wiedzy, a warunki wdrożenia wskazują, czego lokalnie potrzeba do realizacji. Potwierdzenia partnerów oraz wersje Karty łączą rekomendację z planem pracy. Siedem modułów HubMI pracuje na wspólnych sprawach. ROPS widzi zgłoszenia, przydziela opiekunów, prowadzi nabory i aktualizuje bibliotekę. Autor decyduje, które propozycje asystenta wstawić do dokumentu. Wersje, źródła i potwierdzenia pozostają przy sprawie.
 
 ## Otwórz demo
 
@@ -21,7 +21,7 @@ Wyszukiwanie, biblioteka, nabory i opisy testów są dostępne bez konta. W okni
 | Ekspertka | Potwierdzenie zasobu i ocenę przypisanej Karty |
 | Zespół ROPS | Obsługę spraw, publikację wiedzy, nabory i wyniki |
 
-Konta demonstracyjne: `mieszkaniec@splot.demo`, `instytucja@splot.demo`, `ekspert@splot.demo`, `rops@splot.demo`. Wspólne hasło: `SplotDemo2026!`. Użyj dwóch profili przeglądarki, aby zobaczyć odpowiedź w drugiej sesji. Demo korzysta z danych syntetycznych.
+Konta demonstracyjne: `mieszkaniec@splot.demo`, `instytucja@splot.demo`, `ekspert@splot.demo`, `rops@splot.demo`. Wspólne hasło: `SplotDemo2026!`. Użyj dwóch profili przeglądarki, aby zobaczyć odpowiedź w drugiej sesji. Demo korzysta z danych syntetycznych i demonstracyjnych schematów naborów. Przyjęcie wniosku odbywa się w HubMI, a przekazanie do zewnętrznego systemu jest symulowane; demonstracja nie łączy się z produkcyjną bazą ani API ROPS.
 
 ## Przejdź przez jeden projekt
 
@@ -46,7 +46,7 @@ Biblioteka zawiera również mapę z tabelą wskaźników, pięciostopniowy kurs
 
 ZIP zawiera źródła, lockfile, schemat danych, seed, testy i dokumentację. Film i prezentacje są udostępnione osobno pod powyższymi adresami.
 
-Publiczny build `072826ccc85afd79` zaliczył **115 testów domenowych i 22 scenariusze przeglądarkowe**. [Raport walidacji](VALIDATION.md) przypisuje wyniki do wersji aplikacji. [Dokumentacja UX](UX.md) opisuje ekrany i sprawdzone interakcje. [Architektura](ARCHITECTURE.md), [rejestr źródeł](SOURCES.md) i [wykaz narzędzi oraz bibliotek](THIRD_PARTY_NOTICES.md) uzupełniają przekazanie techniczne.
+[Raport walidacji](VALIDATION.md) podaje wykonane testy domenowe i scenariusze przeglądarkowe wraz z wersją aplikacji oraz zakresem sprawdzenia. [Dokumentacja UX](UX.md) opisuje ekrany i sprawdzone interakcje. [Architektura](ARCHITECTURE.md), [rejestr źródeł](SOURCES.md) i [wykaz narzędzi oraz bibliotek](THIRD_PARTY_NOTICES.md) uzupełniają przekazanie techniczne.
 
 ## Utrzymanie i przekazanie
 

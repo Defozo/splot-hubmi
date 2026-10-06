@@ -1,22 +1,34 @@
 # Splot dla HubMI
 
-Splot łączy zgłoszenie lokalnej potrzeby, wybór innowacji, przygotowanie usługi i ocenę pilotażu. Instytucja pracuje z partnerami na wspólnej Karcie wdrożenia, a ROPS prowadzi bibliotekę wiedzy, nabory i obieg spraw.
+Splot prowadzi lokalny pomysł od opisanej potrzeby do wspólnie przygotowanego i ocenionego pilotażu usługi. Mieszkaniec zgłasza problem, instytucja wybiera rozwiązanie i partnerów, a zespół ROPS koordynuje sprawy, nabory i bibliotekę wiedzy. Wspólna Karta wdrożenia łączy cel, warunki, zasoby, budżet i mierniki.
 
 **Autor:** Michał Kiełtyka, **DEFOZO SOFTWARE HOUSE**.
 
-[Uruchom demo](https://agile-kiwi-698.eu-west-1.convex.site) · [GitHub](https://github.com/Defozo/splot-hubmi) · [HackTribe](https://hackyeah2026.hacktribe.co/splot-dla-hubmi/)
+[Uruchom demo](https://agile-kiwi-698.eu-west-1.convex.site) · [Przejdź przez przykładową sprawę](docs/DELIVERY.md) · [HackTribe](https://hackyeah2026.hacktribe.co/splot-dla-hubmi/)
 
-## Co można zrobić
+## Znajdź rozwiązanie i sprawdź warunki zastosowania
 
-- Opisać potrzebę, porównać rozwiązania i sprawdzić ich źródła oraz warunki zastosowania.
-- Rozwinąć pomysł w fiszce i Canwie, a następnie wypełnić formularz wybranego naboru.
-- Przygotować Kartę wdrożenia z budżetem, zasobami, partnerami i miernikami.
-- Uzgodnić udział partnera, prowadzić rozmowę przy sprawie i otrzymywać powiadomienia.
-- Przeprowadzić pilotaż, zebrać opinie i przekazać wyniki kuratorowi wiedzy.
-- Zarządzać publikacją materiałów, źródłami, importem, naborami i uprawnieniami.
-- Obserwować potrzebę i wracać do niej po istotnej zmianie wiedzy.
+Opisz potrzebę własnymi słowami. Splot łączy wyszukiwanie tekstowe i semantyczne, pokazując propozycje wraz ze źródłami i fragmentami uzasadniającymi wybór. Osobno ocenia dopasowanie problemu i warunki lokalne: dostępnych ludzi, miejsce, zasoby czy wymagane partnerstwo. Celne pytanie pomaga uzupełnić informację, która może zmienić następny krok.
 
-Demo wykorzystuje syntetyczne konta, instytucje, innowacje, budżety i wskaźniki. Mapa zawiera trzy fikcyjne wartości. Canwa i nabory mają schematy demonstracyjne, a przekazanie wniosku do zewnętrznego systemu jest symulatorem. Nie jest połączeniem z produkcyjną bazą ani API ROPS.
+Autor widzi, które warunki są spełnione, niespełnione lub wymagają potwierdzenia. Może porównać propozycje, zapisać potrzebę, poprosić o konsultację albo rozwinąć nowy pomysł. Asystent proponuje edytowalną treść; autor wybiera, co wstawić do dokumentu.
+
+## Przejdź od pomysłu do pilotażu
+
+1. **Przygotuj pomysł.** Rozwiń fiszkę i Canwę, a następnie przenieś treść do formularza wybranego naboru.
+2. **Ułóż Kartę wdrożenia.** Zapisz cel usługi, zasoby, budżet, warunki lokalne i sposób oceny.
+3. **Uzgodnij współpracę.** Zaproś partnera i uzyskaj potwierdzenie zasobu na określony czas. Rozmowa, wersje dokumentów i decyzje pozostają przy sprawie.
+4. **Zatwierdź plan.** Autor i opiekun akceptują wersję Karty. System sprawdza wymagane potwierdzenia i dostępność zasobów przed uruchomieniem pilotażu.
+5. **Zbierz doświadczenia.** Przyjmij uczestników, zapisz ich opinie i bariery, podsumuj test oraz przekaż wnioski kuratorowi do publikacji.
+
+## Wiedza wraca do zgłoszonych potrzeb
+
+Obserwowana potrzeba może otrzymać powiadomienie, gdy pojawi się odpowiednia propozycja, zmieni się istotny warunek albo zostanie wycofane źródło. Komunikat wskazuje konkretną zmianę. Zaakceptowana Karta zachowuje swoje wersje, aby zespół mógł świadomie ocenić wpływ nowej wiedzy na plan.
+
+ROPS ma wspólny obieg spraw, opiekunów, publikacji, importów, naborów i uprawnień. Biblioteka obejmuje także materiały, kurs i mapę z tabelą wskaźników. Katalog, formularze i tekstowy tor dopasowania pozostają dostępne przy awarii dostawcy AI.
+
+## Zakres demonstracji
+
+Demo pozwala przejść cały obieg na syntetycznych kontach, instytucjach, innowacjach, budżetach i wskaźnikach. Mapa pokazuje trzy fikcyjne wartości, Canwa i nabory korzystają ze schematów demonstracyjnych, a przekazanie wniosku do zewnętrznego systemu jest symulowane. To projekt dla HubMI, bez połączenia z produkcyjną bazą lub API ROPS. Wyniki testu użytkowników opisują ocenę pilotażu, nie dowód skuteczności społecznej.
 
 ## Konta demonstracyjne
 
